@@ -3,8 +3,7 @@ RUN apt-get update && apt-get install -y python3 g++ make && rm -rf /var/lib/apt
 
 WORKDIR /app
 COPY package*.json ./
-# RUN npm install --omit=dev
-RUN npm install
+RUN npm install --omit=dev
 
 COPY . .
 ENV NODE_ENV=production
