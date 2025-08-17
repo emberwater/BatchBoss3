@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y python3 g++ make && rm -rf /var/lib/apt
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --omit=dev
+RUN npm rebuild better-sqlite3
 
 COPY . .
 ENV NODE_ENV=production
