@@ -1,7 +1,7 @@
 FROM node:20-bullseye-slim
 RUN apt-get update && apt-get install -y python3 g++ make && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+WORKDIR /server
 COPY package*.json ./
 RUN npm install --omit=dev
 RUN npm rebuild better-sqlite3
